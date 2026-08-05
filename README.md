@@ -1,0 +1,36 @@
+# demand-foundry-offers
+
+A public **offer test**: eleven specific automation builds US Tech Automations
+is offering to small businesses, each with a named buyer, a fixed scope, a
+fixed price and a delivery window.
+
+**Live page: https://ustechautomations.github.io/demand-foundry-offers/**
+
+Nothing listed is a shipping product. Each entry is a hypothesis about a real
+operational bottleneck, published with a price attached because that is the
+cheapest honest way to find out whether anyone actually wants it. If someone
+takes one up, we build it to the stated scope within the stated window.
+
+## Why publish offers instead of building first
+
+The alternative — build software, then look for a buyer — is how you spend
+months on something nobody asked for. Publishing the offer first inverts that:
+the market answers before the engineering starts.
+
+## How the page is generated
+
+`index.html` is generated, never hand-written, by
+`outreach/foundry/bin/build_offer_test.py` from the Demand Foundry arm ledger.
+The generator refuses to build if any offer lacks a named buyer role, an
+organization type, a stated problem, a deliverable, a delivery window, or a
+price at or above the $200 floor — so an offer with a missing buyer or an
+invented price cannot reach this page.
+
+Ordering is a topical heuristic derived from search language our own site was
+matched against; it is explicitly *not* evidence of purchase intent, and the
+page says so.
+
+## Contact
+
+Each offer links to `ustechautomations.com/partner` with its own `interest`
+slug, so a reply is attributable to the specific offer that prompted it.
