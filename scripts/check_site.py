@@ -57,8 +57,9 @@ if ORDER_CANONICAL not in locs: fail("verification-certificate order path absent
 root_links = Links(); root_links.feed((ROOT / "index.html").read_text(encoding="utf-8"))
 if not {CHARTER_CANONICAL, CATALOG_CANONICAL, "https://ustechautomations.com/offers/certificates/"}.issubset(root_links.hrefs): fail("offers root does not link all trust surfaces")
 charter_page = (CHARTER / "index.html").read_text(encoding="utf-8")
-for marker in ("The guarantee", "The exemption, stated plainly", "Recount it yourself", "$249"):
+for marker in ("The guarantee", "The exemption, stated plainly", "Recount it yourself", "See terms and request a certificate"):
     if marker not in charter_page: fail(f"charter page lacks {marker!r}")
+if "$249" in charter_page: fail("charter evidence page prices its audit-file links; price belongs on the dedicated order page")
 catalog_page = (CATALOG / "index.html").read_text(encoding="utf-8")
 for marker in ("Signed catalog of what we hold", "UNKNOWN", "NOT-COVERED", "machine-purchasable", "Download verifier"):
     if marker not in catalog_page: fail(f"catalog page lacks {marker!r}")
