@@ -42,6 +42,9 @@ publishes signed proof bundles with their canonical payload, detached Ed25519
 signature, public key, verifier and stated limits. The first certificate
 dogfoods the rail by proving the question-hash and legacy-provenance seal;
 buyers can also request the same fixed-scope certificate service for $249.
+The [forward-provenance charter](https://ustechautomations.com/offers/charter/)
+publishes a sanitized recorder snapshot and a re-derivation script so its
+coverage, exemptions and legacy gaps can be recounted outside our machine.
 
 ## Canonical location
 
