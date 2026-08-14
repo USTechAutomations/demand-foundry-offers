@@ -17,6 +17,7 @@ CANONICAL = "https://ustechautomations.com/offers/certificates/cand-467-question
 CHARTER_CANONICAL = "https://ustechautomations.com/offers/charter/"
 CATALOG_CANONICAL = "https://ustechautomations.com/offers/catalog/"
 ORDER_CANONICAL = "https://ustechautomations.com/offers/verification-certificate/"
+RAW_CATALOG_BASE = "https://raw.githubusercontent.com/USTechAutomations/demand-foundry-offers/main/catalog/"
 
 class Links(HTMLParser):
     def __init__(self):
@@ -74,6 +75,11 @@ machine_candidates = catalog.get("offer_summary", {}).get("machine_sku_candidate
 if offers_total != len(catalog.get("skus", [])): fail("catalog offer summary differs from SKU rows")
 if offers_total == machine_candidates: fail("catalog conflates human offers with machine candidates")
 if not all(row.get("request_url") for row in catalog.get("skus", [])): fail("catalog SKU lacks canonical request URL")
+catalog_links = Links(); catalog_links.feed(catalog_page)
+raw_downloads = {RAW_CATALOG_BASE + name for name in ("catalog.json", "verify_catalog.py", "public-key.pem")}
+if not raw_downloads.issubset(catalog_links.hrefs): fail("catalog does not link all three public verification downloads")
+local_downloads = {CATALOG_CANONICAL + name for name in ("catalog.json", "verify_catalog.py", "public-key.pem")}
+if local_downloads & catalog_links.hrefs: fail("catalog asset link collides with the /offers/<product> order namespace")
 verification = subprocess.run(
     [sys.executable, str(CATALOG / "verify_catalog.py"), str(CATALOG / "catalog.json")],
     capture_output=True,
