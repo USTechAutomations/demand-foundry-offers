@@ -2,7 +2,7 @@
   "algorithm": "Ed25519",
   "payload": {
     "canonical_url": "https://ustechautomations.com/offers/certificates/cand-467-question-seal/",
-    "certificate_id": "usta-cert-3616e2e07bc5cac27cf11e8f",
+    "certificate_id": "usta-cert-40cccaf5f67743c596cb6c34",
     "gate": {
       "issued_at": "2026-08-14T01:53:18Z",
       "verdict": "GREEN"
@@ -22,8 +22,8 @@
       "billing": "one time",
       "buyer": "AI governance, procurement, or platform assurance lead",
       "cancellation": "cancel before generation begins",
-      "contact_instruction": "Select General and include verification certificate in your message.",
-      "contact_url": "https://ustechautomations.com/partner?interest=verification-certificate",
+      "contact_instruction": "Use the dedicated request form; it preserves the verification-certificate product token in the submitted message.",
+      "contact_url": "https://ustechautomations.com/offers/verification-certificate/",
       "deliverable": "one signed HTML and JSON verification certificate generated from agreed rail evidence",
       "delivery": "within two business days of receiving the agreed evidence scope",
       "price_usd": 249
@@ -63,6 +63,6 @@
       "row_id": "cand-467"
     }
   },
-  "signature": "MzduGpuoRaO8JifyHGWlQCTvXlYtWxP3NM2j2M3w2JqJtg2e+Zn1UO6pGkYnaMy2bC5dkL9Bo3xso8z+7f0nDQ==",
+  "signature": "70RSF7Y+r+qKJDK9e/kSJpEbe+GIxRO/BmiaX2UO0atsY45OQiNkAVmb+ecMRGS2aVzDvIdY9yjDEDNIyKGZBw==",
   "version": 1
 }
