@@ -46,6 +46,24 @@ The [forward-provenance charter](https://ustechautomations.com/offers/charter/)
 publishes a sanitized recorder snapshot and a re-derivation script so its
 coverage, exemptions and legacy gaps can be recounted outside our machine.
 
+## Signed sealed-estate catalog
+
+The [estate catalog](https://ustechautomations.com/offers/catalog/) derives its
+clock denominator from the generated revenue-surface census, probes every
+named SQLite database read-only, and preserves missing or unreadable clocks as
+`UNKNOWN`. It copies prices and request URLs from the canonical offer feed and
+states separately how many machine SKU candidates are actually payable.
+
+`scripts/estate_catalog_feed.py` generates the signed JSON, HTML, and release
+public key. `catalog/verify_catalog.py` lets an outside reader verify the
+Ed25519 signature. `scripts/update_catalog_navigation.py` is the idempotent
+post-build step that restores the catalog link after the upstream offer-page
+generator replaces `index.html`; `scripts/check_site.py` fails if navigation,
+the sitemap, the 49-clock denominator, or the signature breaks.
+`scripts/check_catalog_source.py` compares every projected price and request
+field with the canonical live feed, while `scripts/check_catalog_actions.py`
+requires every exposed request URL to return a direct HTTP 200.
+
 ## Canonical location
 
 This page is served on the main domain at <https://ustechautomations.com/offers> via a Google Cloud load-balancer route rule (`offers-edge-backend`). This repo is the source and the GitHub Pages copy is a mirror; both declare the main-domain URL as `rel=canonical`, so they never compete as duplicates.
