@@ -35,6 +35,14 @@ page says so.
 Each offer links to `ustechautomations.com/partner` with its own `interest`
 slug, so a reply is attributable to the specific offer that prompted it.
 
+## Public verification certificates
+
+The [certificate index](https://ustechautomations.com/offers/certificates/)
+publishes signed proof bundles with their canonical payload, detached Ed25519
+signature, public key, verifier and stated limits. The first certificate
+dogfoods the rail by proving the question-hash and legacy-provenance seal;
+buyers can also request the same fixed-scope certificate service for $249.
+
 ## Canonical location
 
 This page is served on the main domain at <https://ustechautomations.com/offers> via a Google Cloud load-balancer route rule (`offers-edge-backend`). This repo is the source and the GitHub Pages copy is a mirror; both declare the main-domain URL as `rel=canonical`, so they never compete as duplicates.
