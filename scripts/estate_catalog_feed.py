@@ -42,6 +42,10 @@ PUBLIC_CANONICAL = "https://ustechautomations.com/offers/catalog/"
 OFFER_FEED_CANONICAL = (
     "https://ustechautomations.com/permits/agent-quotable-offers/offers.json"
 )
+RAW_RELEASE_BASE = (
+    "https://raw.githubusercontent.com/USTechAutomations/"
+    "demand-foundry-offers/main/catalog/"
+)
 EXCLUDED_TABLES = frozenset({"collection_runs", "blobs", "raw_fetches"})
 HEX64 = re.compile(r"^[0-9a-f]{64}$")
 SURFACE_HEADER = "| Clock | Rows | Productized as |"
@@ -677,9 +681,9 @@ main,header,footer{{max-width:1120px;margin:auto;padding:0 24px}} header{{paddin
   <h1>Signed catalog of what we hold — and what we do not</h1>
   <p class="lede">Every clock row below is derived from the generated estate universe and a read-only database probe. Every price and request URL is copied from the canonical live offer feed. Missing data stays visible as <strong>UNKNOWN</strong>; an offer without a verifiable source clock and requested range is <strong>NOT-COVERED</strong>.</p>
   <div class="actions">
-    <a class="button" href="catalog.json">Download signed JSON</a>
-    <a class="button secondary" href="verify_catalog.py">Download verifier</a>
-    <a class="button secondary" href="public-key.pem">Download public key</a>
+    <a class="button" href="{RAW_RELEASE_BASE}catalog.json">Download signed JSON</a>
+    <a class="button secondary" href="{RAW_RELEASE_BASE}verify_catalog.py">Download verifier</a>
+    <a class="button secondary" href="{RAW_RELEASE_BASE}public-key.pem">Download public key</a>
     <a class="button secondary" href="{OFFER_FEED_CANONICAL}">Canonical offer feed</a>
   </div>
 </header>
@@ -704,7 +708,7 @@ main,header,footer{{max-width:1120px;margin:auto;padding:0 24px}} header{{paddin
 
   <h2>Verify without trusting this page</h2>
   <ol>
-    <li>Download <a href="catalog.json"><code>catalog.json</code></a>, <a href="verify_catalog.py"><code>verify_catalog.py</code></a>, and <a href="public-key.pem"><code>public-key.pem</code></a> into one directory.</li>
+    <li>Download <a href="{RAW_RELEASE_BASE}catalog.json"><code>catalog.json</code></a>, <a href="{RAW_RELEASE_BASE}verify_catalog.py"><code>verify_catalog.py</code></a>, and <a href="{RAW_RELEASE_BASE}public-key.pem"><code>public-key.pem</code></a> into one directory.</li>
     <li>Run <code>python3 verify_catalog.py catalog.json</code> with Python and the <code>cryptography</code> package.</li>
     <li>The verifier matches the standalone public key to the embedded key, removes the signature object, canonicalizes the exact remaining JSON, checks its SHA-256, verifies the Ed25519 signature, and rejects a modified count, price, endpoint, or coverage state.</li>
   </ol>

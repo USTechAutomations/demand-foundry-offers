@@ -64,6 +64,12 @@ the sitemap, the 49-clock denominator, or the signature breaks.
 field with the canonical live feed, while `scripts/check_catalog_actions.py`
 requires every exposed request URL to return a direct HTTP 200.
 
+The page links verification downloads through the repository raw-file host,
+although the same bytes are also served at the canonical main-domain paths.
+That keeps passive assets outside the `/offers/<product>` order namespace, so
+the order-path negative control evaluates only the catalog page itself and the
+57 real per-SKU request actions.
+
 ## Canonical location
 
 This page is served on the main domain at <https://ustechautomations.com/offers> via a Google Cloud load-balancer route rule (`offers-edge-backend`). This repo is the source and the GitHub Pages copy is a mirror; both declare the main-domain URL as `rel=canonical`, so they never compete as duplicates.
