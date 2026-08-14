@@ -39,8 +39,9 @@ for name in ("index.html", "catalog.json", "public-key.pem", "verify_catalog.py"
 if not (ORDER / "index.html").is_file() or (ORDER / "index.html").stat().st_size == 0: fail("missing or empty verification-certificate/index.html")
 
 page = (CERT / "index.html").read_text(encoding="utf-8")
-for marker in ("$249", "Ed25519", "How to verify", "Request the $249 verification certificate"):
+for marker in ("Ed25519", "How to verify", "See terms and request a verification certificate"):
     if marker not in page: fail(f"certificate page lacks {marker!r}")
+if "$249" in page: fail("certificate evidence page prices its asset links; price belongs on the dedicated order page")
 if CHARTER_CANONICAL not in page: fail("certificate page does not link the provenance charter")
 if ORDER_CANONICAL not in page: fail("certificate page does not link the dedicated order path")
 
