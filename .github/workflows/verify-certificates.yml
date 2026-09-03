@@ -17,3 +17,5 @@ jobs:
       - run: python scripts/check_site.py
       - run: python certificates/cand-467-question-seal/verify_certificate.py certificates/cand-467-question-seal/certificate.json certificates/cand-467-question-seal/public-key.pem
       - run: python charter/rederive.py charter
+      - run: python scripts/test_sync_to_usta.py
+      - run: python scripts/test_export_offers_ts.py
