@@ -8,16 +8,17 @@
  * site it is hand-mirrored here; the generator owner should target this file
  * instead of the retired GitHub Pages `index.html`.
  *
- * Every price, buyer role, deliverable and window is copied exactly from the
- * 2026-08-05 build. Only the `lead` sentences are rewritten (the generated
- * "For a Office Manager at a Small legal practice" template produced six
- * article errors).
+ * Every price, buyer role, problem, question and window is copied exactly from
+ * the 2026-08-05 build. The `deliverable` titles are rewritten outcome-first from
+ * the ledger's build descriptions, and the `lead` sentences are hand-written
+ * (the generated "For a Office Manager at a Small legal practice" template
+ * produced six article errors).
  */
 
 export interface Offer {
   /** Stable id; also the `interest` token carried to /partner. */
   slug: string;
-  /** The deliverable, verbatim from the arm ledger. */
+  /** What the buyer gets, as an outcome-first title (rewritten from the arm ledger). */
   deliverable: string;
   /** Buyer role, verbatim. */
   buyerRole: string;
@@ -38,8 +39,7 @@ export interface Offer {
 export const OFFERS: readonly Offer[] = [
   {
     slug: 'law-firm-client-intake-automation',
-    deliverable:
-      'Build of a secure, automated digital intake form system that collects client data and drafts initial case files.',
+    deliverable: 'An intake form that collects client data and drafts the case file.',
     buyerRole: 'Managing Attorney',
     organizationType: 'Legal practice handling high-volume client intakes',
     lead: 'For the managing attorney of a legal practice handling high-volume client intakes.',
@@ -54,8 +54,7 @@ export const OFFERS: readonly Offer[] = [
   },
   {
     slug: 'law-firm-intake-form-automation',
-    deliverable:
-      'Voice-to-text and email parsing tool that drafts case intake summaries directly into a spreadsheet.',
+    deliverable: 'Voicemails and emails turned into intake summaries in your spreadsheet.',
     buyerRole: 'Office Manager',
     organizationType: 'Small legal practice handling civil or family law cases',
     lead: 'For the office manager of a small legal practice handling civil or family law cases.',
@@ -70,8 +69,7 @@ export const OFFERS: readonly Offer[] = [
   },
   {
     slug: 'accountant-client-document-gateway',
-    deliverable:
-      'Secure portal link generator that auto-emails clients a unique upload link for their tax documents.',
+    deliverable: 'A secure upload link emailed to each client for tax documents.',
     buyerRole: 'Managing Partner',
     organizationType: 'CPA firm serving small business clients',
     lead: 'For the managing partner of a CPA firm serving small business clients.',
@@ -86,8 +84,7 @@ export const OFFERS: readonly Offer[] = [
   },
   {
     slug: 'accounting-firm-doc-extraction-pipeline',
-    deliverable:
-      'Implementation of an automated data extraction workflow that parses client uploads into structured spreadsheet formats.',
+    deliverable: 'Client uploads parsed into structured spreadsheets automatically.',
     buyerRole: 'Managing Partner',
     organizationType: 'Small to mid-sized accounting practice managing client documents',
     lead: 'For the managing partner of a small to mid-sized accounting practice managing client documents.',
@@ -103,7 +100,7 @@ export const OFFERS: readonly Offer[] = [
   {
     slug: 'insurance-agency-policy-renewal-tracker',
     deliverable:
-      'System to extract policy numbers and expiration dates from emails and push alerts to a central dashboard.',
+      'Policy numbers and expiration dates pulled from email into one renewal dashboard.',
     buyerRole: 'Agency Owner',
     organizationType: 'Independent insurance broker managing diverse client policies',
     lead: 'For the agency owner of an independent insurance brokerage managing diverse client policies.',
@@ -118,8 +115,7 @@ export const OFFERS: readonly Offer[] = [
   },
   {
     slug: 'insurance-agency-renewal-sequence-bot',
-    deliverable:
-      'Configuration of an automated email and task sequence that triggers exactly 90 days before policy renewal dates.',
+    deliverable: 'An email and task sequence that starts 90 days before each renewal.',
     buyerRole: 'Agency Owner',
     organizationType: 'Independent insurance broker managing policy renewals',
     lead: 'For the agency owner of an independent insurance brokerage managing policy renewals.',
@@ -134,8 +130,7 @@ export const OFFERS: readonly Offer[] = [
   },
   {
     slug: 'mortgage-broker-doc-collection-bot',
-    deliverable:
-      'Automated SMS and email sequence that requests specific documents and uploads them to a secure folder upon receipt.',
+    deliverable: 'SMS and email requests that collect loan documents into a secure folder.',
     buyerRole: 'Senior Broker',
     organizationType: 'Brokerage firm coordinating loans between buyers and lenders',
     lead: 'For a senior broker at a brokerage firm coordinating loans between buyers and lenders.',
@@ -150,8 +145,7 @@ export const OFFERS: readonly Offer[] = [
   },
   {
     slug: 'landscaper-estimate-follow-up-system',
-    deliverable:
-      'Trigger-based follow-up system that sends polite check-in messages if no reply is received within 2 days.',
+    deliverable: 'A follow-up that checks in on every unanswered estimate after 2 days.',
     buyerRole: 'Business Owner',
     organizationType: 'Residential or commercial landscaping service provider',
     lead: 'For the business owner of a residential or commercial landscaping service provider.',
@@ -166,8 +160,7 @@ export const OFFERS: readonly Offer[] = [
   },
   {
     slug: 'medical-spa-appointment-reminder-flow',
-    deliverable:
-      'Multi-channel reminder system sending SMS and email confirmations 48h and 24h before appointments.',
+    deliverable: 'SMS and email reminders sent 48 and 24 hours before each appointment.',
     buyerRole: 'Clinic Director',
     organizationType: 'Aesthetic medicine clinic offering high-ticket treatments',
     lead: 'For the clinic director of an aesthetic medicine clinic offering high-ticket treatments.',
@@ -182,8 +175,7 @@ export const OFFERS: readonly Offer[] = [
   },
   {
     slug: 'spa-salon-no-show-reduction-system',
-    deliverable:
-      'Integration of a multi-channel appointment reminder system (SMS + Email) with automated confirmation tracking.',
+    deliverable: 'SMS and email reminders that track which clients confirmed.',
     buyerRole: 'Salon Owner',
     organizationType: 'Appointment-based beauty and wellness business',
     lead: 'For the salon owner of an appointment-based beauty and wellness business.',
@@ -198,8 +190,7 @@ export const OFFERS: readonly Offer[] = [
   },
   {
     slug: 'window-install-lead-response-automation',
-    deliverable:
-      'Setup of an automated SMS and email dispatching system that instantly acknowledges leads and books estimate appointments.',
+    deliverable: 'Instant SMS and email replies that book an estimate for each lead.',
     buyerRole: 'Owner or Operations Manager',
     organizationType: 'Local home improvement contractor handling inbound leads',
     lead: 'For the owner or operations manager of a local home improvement contractor handling inbound leads.',

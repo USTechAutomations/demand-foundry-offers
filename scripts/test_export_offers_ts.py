@@ -54,6 +54,19 @@ class ExportTests(unittest.TestCase):
             exporter.LEAD_OVERRIDES["mortgage-broker-doc-collection-bot"],
         )
         self.assertTrue(by_slug["window-install-lead-response-automation"]["problem"].startswith("You are losing"))
+        for offer in offers:
+            self.assertEqual(offer["deliverable"], exporter.DELIVERABLE_OVERRIDES[offer["slug"]])
+            self.assertLess(len(offer["deliverable"].split()), 13, offer["slug"])
+            self.assertFalse(offer["deliverable"].startswith(("Build of", "Setup of", "Implementation of", "Configuration of")))
+
+    def test_every_offer_needs_a_title_override(self):
+        saved = dict(exporter.DELIVERABLE_OVERRIDES)
+        try:
+            exporter.DELIVERABLE_OVERRIDES.pop("law-firm-client-intake-automation")
+            with self.assertRaises(ValueError):
+                exporter.parse_offers((ROOT / "index.html").read_text(encoding="utf-8"))
+        finally:
+            exporter.DELIVERABLE_OVERRIDES.update(saved)
 
     def test_prettier_wrapping_and_quoting(self):
         long_value = "x" * 95

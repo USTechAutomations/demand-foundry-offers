@@ -43,6 +43,22 @@ LEAD_OVERRIDES = {
 PROBLEM_OVERRIDES = {
     "window-install-lead-response-automation": "You are losing revenue because manual scheduling and estimate coordination delays your response to customer inquiries.",
 }
+# Outcome-first titles (what the buyer gets, under 12 words) in place of the
+# ledger's build descriptions ("Build of a secure, automated ..."). Every slug
+# must have one; the generated description never appears on the page.
+DELIVERABLE_OVERRIDES = {
+    "law-firm-client-intake-automation": "An intake form that collects client data and drafts the case file.",
+    "law-firm-intake-form-automation": "Voicemails and emails turned into intake summaries in your spreadsheet.",
+    "accountant-client-document-gateway": "A secure upload link emailed to each client for tax documents.",
+    "accounting-firm-doc-extraction-pipeline": "Client uploads parsed into structured spreadsheets automatically.",
+    "insurance-agency-policy-renewal-tracker": "Policy numbers and expiration dates pulled from email into one renewal dashboard.",
+    "insurance-agency-renewal-sequence-bot": "An email and task sequence that starts 90 days before each renewal.",
+    "mortgage-broker-doc-collection-bot": "SMS and email requests that collect loan documents into a secure folder.",
+    "landscaper-estimate-follow-up-system": "A follow-up that checks in on every unanswered estimate after 2 days.",
+    "medical-spa-appointment-reminder-flow": "SMS and email reminders sent 48 and 24 hours before each appointment.",
+    "spa-salon-no-show-reduction-system": "SMS and email reminders that track which clients confirmed.",
+    "window-install-lead-response-automation": "Instant SMS and email replies that book an estimate for each lead.",
+}
 
 HEADER = '''/**
  * The eleven open offers shown on /offers.
@@ -54,16 +70,17 @@ HEADER = '''/**
  * site it is hand-mirrored here; the generator owner should target this file
  * instead of the retired GitHub Pages `index.html`.
  *
- * Every price, buyer role, deliverable and window is copied exactly from the
- * {built} build. Only the `lead` sentences are rewritten (the generated
- * "For a Office Manager at a Small legal practice" template produced six
- * article errors).
+ * Every price, buyer role, problem, question and window is copied exactly from
+ * the {built} build. The `deliverable` titles are rewritten outcome-first from
+ * the ledger's build descriptions, and the `lead` sentences are hand-written
+ * (the generated "For a Office Manager at a Small legal practice" template
+ * produced six article errors).
  */
 
 export interface Offer {
   /** Stable id; also the `interest` token carried to /partner. */
   slug: string;
-  /** The deliverable, verbatim from the arm ledger. */
+  /** What the buyer gets, as an outcome-first title (rewritten from the arm ledger). */
   deliverable: string;
   /** Buyer role, verbatim. */
   buyerRole: string;
@@ -221,10 +238,12 @@ def parse_offers(html: str) -> tuple[list[dict], str]:
         missing = [k for k in ("slug", "deliverable", "buyerRole", "organizationType", "problem", "price", "deliveryDays") if not raw.get(k)]
         if missing or len(raw["questions"]) == 0:
             raise ValueError(f"offer {slug!r} lacks {missing or ['questions']}")
+        if slug not in DELIVERABLE_OVERRIDES:
+            raise ValueError(f"offer {slug!r} has no DELIVERABLE_OVERRIDES title")
         offers.append(
             {
                 "slug": slug,
-                "deliverable": raw["deliverable"],
+                "deliverable": DELIVERABLE_OVERRIDES[slug],
                 "buyerRole": raw["buyerRole"],
                 "organizationType": raw["organizationType"],
                 "lead": LEAD_OVERRIDES.get(slug) or default_lead(raw["buyerRole"], raw["organizationType"]),
