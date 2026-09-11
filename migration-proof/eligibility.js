@@ -19,15 +19,25 @@
   }
 
   function asPositiveInt(value) {
-    if (typeof value === "number" && Number.isInteger(value)) return value;
-    if (typeof value === "string" && /^(?:0|[1-9]\d*)$/.test(value.trim())) {
-      return parseInt(value.trim(), 10);
+    if (typeof value === "number") {
+      if (!Number.isSafeInteger(value)) return NaN;
+      return value;
+    }
+    if (typeof value === "string") {
+      var trimmed = value.trim();
+      if (!/^(?:0|[1-9]\d*)$/.test(trimmed)) return NaN;
+      var parsed = Number(trimmed);
+      if (!Number.isSafeInteger(parsed) || String(parsed) !== trimmed) return NaN;
+      return parsed;
     }
     return NaN;
   }
 
   function classify(input) {
-    var src = input || {};
+    if (typeof input !== "object" || input === null || Array.isArray(input)) {
+      return { status: "incomplete" };
+    }
+    var src = input;
     var engine = src.engine;
     var target = src.target;
     var authorized = asBool(src.authorized);
@@ -41,7 +51,7 @@
       authorized === null ||
       reportingOnly === null ||
       privateData === null ||
-      !Number.isInteger(objectCount) ||
+      !Number.isSafeInteger(objectCount) ||
       objectCount <= 0
     ) {
       return { status: "incomplete" };
