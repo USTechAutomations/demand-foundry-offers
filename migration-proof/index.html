@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Match reporting behavior when moving SQL Server work to PostgreSQL — US Tech Automations</title>
+  <meta name="description" content="Match reporting SQL behavior when moving from SQL Server to PostgreSQL. Local questionnaire plus a synthetic comparison of 3 procedures and 11 matched cases. A person reviews answers before any quote.">
+  <link rel="canonical" href="https://ustechautomations.github.io/demand-foundry-offers/migration-proof/">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* database-migration only: form layout. Semantic tokens. No shared-class restyle. */
+    body[data-family="database-migration"] .elig {
+      display: grid;
+      gap: 1rem;
+      max-width: 32rem;
+    }
+    body[data-family="database-migration"] .elig .q {
+      display: grid;
+      gap: .35rem;
+    }
+    body[data-family="database-migration"] .elig .hint {
+      color: var(--muted-fg);
+      font-size: .875rem;
+      margin: 0;
+    }
+    body[data-family="database-migration"] .deliverables {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+    body[data-family="database-migration"] .deliverables li {
+      margin: .35rem 0;
+    }
+    body[data-family="database-migration"] .outcome {
+      margin-top: 1.25rem;
+      padding: 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    body[data-family="database-migration"] .outcome[hidden] { display: none; }
+    body[data-family="database-migration"] .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      align-items: center;
+    }
+    @media (max-width: 34rem) {
+      body[data-family="database-migration"] .actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      body[data-family="database-migration"] .actions .btn { width: 100%; }
+    }
+    @media (max-width: 40rem) {
+      body[data-family="database-migration"] .wrap,
+      body[data-family="database-migration"] section,
+      body[data-family="database-migration"] p,
+      body[data-family="database-migration"] li,
+      body[data-family="database-migration"] label { min-width: 0; overflow-wrap: anywhere; }
+    }
+    body[data-family="database-migration"] .btn-buy,
+    body[data-family="database-migration"] .btn-buy:hover {
+      background: hsl(var(--primary-surface-hover));
+      border-color: hsl(var(--primary-surface-hover));
+    }
+    body[data-family="database-migration"] main a {
+      color: var(--fg);
+      text-decoration: underline;
+      text-underline-offset: .18em;
+    }
+  </style>
+  <meta name="theme-color" content="#7a3b12">
+  <link rel="icon" type="image/svg+xml" href="https://ustechautomations.com/logo.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://ustechautomations.com/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://ustechautomations.com/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://ustechautomations.com/apple-touch-icon.png">
+  <link rel="manifest" href="https://ustechautomations.com/site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="US Tech Automations — dated change feeds">
+  <meta property="og:url" content="https://ustechautomations.github.io/demand-foundry-offers/migration-proof/">
+  <meta property="og:title" content="Match reporting behavior when moving SQL Server work to PostgreSQL — US Tech Automations">
+  <meta name="twitter:title" content="Match reporting behavior when moving SQL Server work to PostgreSQL — US Tech Automations">
+  <meta property="og:description" content="Match reporting SQL behavior when moving from SQL Server to PostgreSQL. Local questionnaire plus a synthetic comparison of 3 procedures and 11 matched cases. A person reviews answers before any quote.">
+  <meta name="twitter:description" content="Match reporting SQL behavior when moving from SQL Server to PostgreSQL. Local questionnaire plus a synthetic comparison of 3 procedures and 11 matched cases. A person reviews answers before any quote.">
+  <meta name="twitter:card" content="summary">
+</head>
+<body data-family="database-migration">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="https://ustechautomations.com/feeds/">Dated change feeds <span>/ US Tech Automations</span></a>
+    <p class="crumbs"><a href="https://ustechautomations.com/feeds/">Feeds</a><span class="sep">/</span>database-migration</p>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Database migration <span class="dot"></span> reporting SQL <span class="dot"></span> human review</p>
+    <h1>Match reporting behavior when moving SQL Server work to PostgreSQL</h1>
+    <p class="lede">Teams moving reporting SQL from SQL Server to PostgreSQL need the reports to keep the same meaning. This page has a local questionnaire and a small synthetic comparison. A later assessment would produce converted reporting SQL, a reproducible comparison report, a list of discrepancies and unsupported cases, and handoff instructions. That is proposed work. A person reviews your answers before any quote.</p>
+    <dl class="rail">
+      <div><dt>Procedures compared</dt><dd>3</dd></div>
+      <div><dt>Matched cases</dt><dd>11</dd></div>
+      <div><dt>Proposed work</dt><dd>Converted reporting SQL and a comparison report</dd></div>
+      <div><dt>Customer proof</dt><dd>
+        <span class="state">
+          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.1"/><path d="M8 4.3V8l2.6 1.8"/></svg>
+          None on this page
+        </span>
+      </dd></div>
+    </dl>
+    <p class="hero-cta"><a class="btn btn-buy btn-lg" href="#eligibility">Check eligibility</a>
+    <span class="btn-note">Runs on this device. Nothing is uploaded.</span></p>
+  </div>
+</section>
+
+<main id="main">
+  <div class="wrap">
+    <section>
+      <h2>What an assessment would deliver</h2>
+      <p>If a person takes the work, the proposed scope is:</p>
+      <ul class="deliverables">
+        <li>Converted reporting SQL</li>
+        <li>A comparison report someone else can re-run</li>
+        <li>Explicit discrepancies and unsupported cases</li>
+        <li>Handoff instructions</li>
+      </ul>
+      <p>That scope still needs assessment. This page does not take payment and does not claim the work is commercially validated.</p>
+    </section>
+
+    <section>
+      <h2>What the comparison covered</h2>
+      <p>The synthetic comparison covers optional filters, empty reports, month boundaries, aggregate joins, ordered running totals and large decimals: 3 synthetic procedures and 11 matched cases. It did not assess a customer estate. A customer migration assessment is a separate piece of work.</p>
+      <p>The public synthetic evidence is the SQL Fiddle for that SQL Server source:</p>
+      <p><a href="https://sqlfiddle.com/sql-server/online-compiler?id=b24f3327-eb8e-4635-82c8-b99f8ebaf78a" rel="noopener">sqlfiddle.com SQL Server compiler (synthetic id b24f3327-eb8e-4635-82c8-b99f8ebaf78a)</a></p>
+      <p>Nine result sets come from that run. <a href="https://sqlfiddle.com/sql-server/online-compiler?id=f143c3c8-6988-4848-83b0-07c6ea68d359">Two further large-total results</a> exposed an aggregate precision error that we repaired.</p>
+      <p><a href="migration-example.zip">Download the synthetic example and replay instructions</a>. The replay runs PostgreSQL against saved SQL Server results. It does not rerun SQL Server or prove arbitrary customer migrations.</p>
+    </section>
+
+    <section id="eligibility">
+      <h2>Local eligibility questionnaire</h2>
+      <p>Answer on this device. Nothing is sent and no SQL file is accepted. After you check, you can download a plain-text note of your answers. To ask a person to look at an authorized, reporting-only SQL Server to PostgreSQL estate, open the partner contact, mention that assessment, and do not send private data through this page.</p>
+      <form id="eligibility-form" class="elig card" novalidate>
+        <div class="q">
+          <label for="engine">Current database</label>
+          <select class="field" id="engine" name="engine">
+            <option value="">Choose one</option>
+            <option value="sqlserver">SQL Server</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="q">
+          <label for="target">Move reports to</label>
+          <select class="field" id="target" name="target">
+            <option value="">Choose one</option>
+            <option value="postgresql">PostgreSQL</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="q">
+          <label for="authorized">Do you have authority to request this assessment?</label>
+          <select class="field" id="authorized" name="authorized">
+            <option value="">Choose one</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div class="q">
+          <label for="reportingOnly">Is this reporting work only (no production writes)?</label>
+          <select class="field" id="reportingOnly" name="reportingOnly">
+            <option value="">Choose one</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div class="q">
+          <label for="privateData">Does the work include private or regulated personal data?</label>
+          <select class="field" id="privateData" name="privateData">
+            <option value="">Choose one</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div class="q">
+          <label for="objectCount">How many objects would be assessed?</label>
+          <input class="field" id="objectCount" name="objectCount" type="number" min="1" step="1" inputmode="numeric" autocomplete="off">
+          <p class="hint">A positive whole number. This is a count, not an upload.</p>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn btn-buy" id="check-eligibility">Check eligibility</button>
+          <button type="button" class="btn btn-ghost" id="download-assessment" hidden>Download local assessment</button>
+        </div>
+      </form>
+      <div class="outcome" id="outcome" hidden role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="contact">
+      <h2>Ask a person to look</h2>
+      <p>After you have a result you are willing to discuss, open the partner contact and say you want a reporting SQL Server to PostgreSQL assessment. This page cannot receive files or private data.</p>
+      <p><a href="https://ustechautomations.com/partner?interest=database-migration" rel="noopener">ustechautomations.com/partner?interest=database-migration</a></p>
+    </section>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>Synthetic comparison of 3 procedures and 11 matched cases. Customer assessment is separate. Local questionnaire; nothing is sent from this page.</p>
+    <p class="addr">US Tech Automations &middot; 3298 N Glassford Hill Rd Ste 104 PMB 1055, Prescott Valley AZ 86314</p>
+  </div>
+</footer>
+<script src="eligibility.js"></script>
+<script>
+(function () {
+  var form = document.getElementById("eligibility-form");
+  var outcome = document.getElementById("outcome");
+  var downloadBtn = document.getElementById("download-assessment");
+  var lastText = "";
+  var objectUrl = "";
+  var CONTACT = "https://ustechautomations.com/partner?interest=database-migration";
+
+  var MEANING = {
+    incomplete: "Fill every field. Object count must be a positive whole number.",
+    unsupported: "This local check only covers an authorized, reporting-only SQL Server estate aimed at PostgreSQL. Other engines, unauthorized requests, or work that is not reporting-only stay outside this questionnaire.",
+    "private-review": "Private or regulated data is not handled by this local form. A person would have to review that path separately. Nothing was stored or sent.",
+    review: "A person can assess this estate. That is not acceptance and not a promise the work will proceed."
+  };
+
+  function yn(value) {
+    if (value === "yes") return true;
+    if (value === "no") return false;
+    return null;
+  }
+
+  function labelEngine(value) {
+    if (value === "sqlserver") return "SQL Server";
+    if (value === "postgresql") return "PostgreSQL";
+    if (value === "other") return "Other";
+    return value || "(missing)";
+  }
+
+  function readAnswers() {
+    return {
+      engine: document.getElementById("engine").value,
+      target: document.getElementById("target").value,
+      authorized: yn(document.getElementById("authorized").value),
+      reportingOnly: yn(document.getElementById("reportingOnly").value),
+      privateData: yn(document.getElementById("privateData").value),
+      objectCount: document.getElementById("objectCount").value
+    };
+  }
+
+  function buildText(answers, status) {
+    var lines = [
+      "US Tech Automations — local migration assessment",
+      "Generated on this device. Nothing was sent.",
+      "",
+      "Engine: " + labelEngine(answers.engine),
+      "Target: " + labelEngine(answers.target),
+      "Authorized: " + (answers.authorized === true ? "yes" : answers.authorized === false ? "no" : "(missing)"),
+      "Reporting only: " + (answers.reportingOnly === true ? "yes" : answers.reportingOnly === false ? "no" : "(missing)"),
+      "Private data: " + (answers.privateData === true ? "yes" : answers.privateData === false ? "no" : "(missing)"),
+      "Object count: " + (answers.objectCount === "" ? "(missing)" : answers.objectCount),
+      "",
+      "Outcome: " + status,
+      "Meaning: " + MEANING[status],
+      "",
+      "Review is not acceptance. A person still has to look before any quote.",
+      "The original synthetic comparison covered 3 procedures and 11 matched cases only.",
+      "Synthetic evidence: https://sqlfiddle.com/sql-server/online-compiler?id=b24f3327-eb8e-4635-82c8-b99f8ebaf78a",
+      "That evidence is not real customer proof. Customer migration assessment is separate.",
+      "",
+      "Next step: open " + CONTACT,
+      "and ask for a reporting SQL Server to PostgreSQL assessment.",
+      "Do not send private data through the page."
+    ];
+    return lines.join("\n");
+  }
+
+  function nextStepHtml(status) {
+    if (status === "review" || status === "private-review") {
+      return "<p>Next step: save the local note if you want a copy, then write through <a href=\"" + CONTACT + "\" rel=\"noopener\">the partner contact</a> and mention a reporting SQL Server to PostgreSQL assessment. Do not attach private data here; this page cannot receive it.</p>";
+    }
+    if (status === "unsupported") {
+      return "<p>This questionnaire does not cover that mix. If you still want a person to look, say what you have through <a href=\"" + CONTACT + "\" rel=\"noopener\">the partner contact</a>.</p>";
+    }
+    return "<p>Fill every field, then check again.</p>";
+  }
+
+  function show(status, answers) {
+    lastText = buildText(answers, status);
+    outcome.hidden = false;
+    outcome.innerHTML =
+      "<h3>Outcome: " + status + "</h3>" +
+      "<p>" + MEANING[status] + "</p>" +
+      nextStepHtml(status);
+    downloadBtn.hidden = false;
+  }
+
+  function clearOutcome() {
+    lastText = "";
+    outcome.hidden = true;
+    outcome.textContent = "";
+    downloadBtn.hidden = true;
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var answers = readAnswers();
+    var result = classify(answers);
+    show(result.status, answers);
+  });
+
+  var fields = form.querySelectorAll("select, input");
+  for (var i = 0; i < fields.length; i++) {
+    fields[i].addEventListener("change", clearOutcome);
+    fields[i].addEventListener("input", clearOutcome);
+  }
+
+  downloadBtn.addEventListener("click", function () {
+    if (!lastText) return;
+    var blob = new Blob([lastText], { type: "text/plain;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var prior = objectUrl;
+    objectUrl = url;
+    var link = document.createElement("a");
+    link.href = url;
+    link.download = "migration-assessment.txt";
+    link.rel = "noopener";
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    window.setTimeout(function () {
+      if (link.parentNode) link.parentNode.removeChild(link);
+      if (prior) URL.revokeObjectURL(prior);
+    }, 60000);
+  });
+})();
+</script>
+</body>
+</html>

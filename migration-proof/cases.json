@@ -1,0 +1,47 @@
+[
+  [
+    "all_customers",
+    "EXEC customer_report NULL,NULL;",
+    "SELECT * FROM customer_report(NULL,NULL)"
+  ],
+  [
+    "paid_customer",
+    "EXEC customer_report 10,'paid';",
+    "SELECT * FROM customer_report(10,'paid')"
+  ],
+  [
+    "absent_customer",
+    "EXEC customer_report 999,NULL;",
+    "SELECT * FROM customer_report(999,NULL)"
+  ],
+  [
+    "adjusted_feb",
+    "EXEC adjusted_month '20240201';",
+    "SELECT * FROM adjusted_month('2024-02-01')"
+  ],
+  [
+    "adjusted_mar",
+    "EXEC adjusted_month '20240301';",
+    "SELECT * FROM adjusted_month('2024-03-01')"
+  ],
+  [
+    "adjusted_empty",
+    "EXEC adjusted_month '20240401';",
+    "SELECT * FROM adjusted_month('2024-04-01')"
+  ],
+  [
+    "ranking_mixed",
+    "EXEC ranked_orders 10;",
+    "SELECT * FROM ranked_orders(10)"
+  ],
+  [
+    "ranking_ties",
+    "EXEC ranked_orders 30;",
+    "SELECT * FROM ranked_orders(30)"
+  ],
+  [
+    "ranking_empty",
+    "EXEC ranked_orders 999;",
+    "SELECT * FROM ranked_orders(999)"
+  ]
+]
