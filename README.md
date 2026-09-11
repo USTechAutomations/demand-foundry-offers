@@ -97,4 +97,4 @@ typed module the React page renders; `--write` runs it on every sync.
 
 ## SQL Server reporting migration proof
 
-The [synthetic migration example](migration-proof/) provides source-tested reporting SQL, exact-numeric replay instructions and an assessment contact path. Its eleven saved SQL Server result sets are compared with fresh PostgreSQL output. This is public technical evidence, not a commercially validated migration offer or active checkout. No customer data is included.
+The [migration proof and assessment page](https://ustechautomations.github.io/demand-foundry-offers/migration-proof/) provides source-tested reporting SQL, a downloadable example and an assessment contact path. The [source and replay instructions](migration-proof/) are available for independent inspection. Its eleven saved SQL Server result sets are compared with fresh PostgreSQL output. This is public technical evidence, not a commercially validated migration offer or active checkout. No customer data is included.
